@@ -1,0 +1,107 @@
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #793351;
+  background: #fff0f5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 15% 18%, #ffb6d3 0, transparent 32%),
+    radial-gradient(circle at 86% 80%, #ffc9db 0, transparent 30%),
+    linear-gradient(155deg, #fff5f8, #ffe5ee);
+}
+
+.cartao {
+  width: min(100%, 470px);
+  padding: 30px 18px 20px;
+  border: 1px solid #ffe4ed;
+  border-radius: 28px;
+  background: #fffafc;
+  box-shadow: 0 16px 48px #b94f7a25;
+  text-align: center;
+  overflow: hidden;
+}
+
+.coracao-topo { font-size: 44px; }
+.subtitulo { margin: 12px 0 8px; color: #ab6685; font-size: 14px; }
+
+h1 {
+  max-width: 380px;
+  margin: 0 auto;
+  font-size: clamp(23px, 5.4vw, 31px);
+  line-height: 1.23;
+}
+
+.dica { margin: 17px 0 3px; color: #aa7186; font-size: 14px; }
+
+.arena {
+  position: relative;
+  width: 100%;
+  height: 275px;
+}
+
+.botao {
+  position: absolute;
+  top: 60px;
+  width: 102px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 5px 13px #a8567930;
+}
+
+.botao-sim {
+  left: calc(50% - 116px);
+  color: white;
+  background: #ea6096;
+  touch-action: manipulation;
+  transition: left .17s ease, top .17s ease, transform .17s ease;
+}
+
+.botao-nao {
+  left: calc(50% + 14px);
+  color: #8c4262;
+  background: #ffe2ec;
+}
+
+.botao:focus-visible { outline: 3px solid #9e477a; outline-offset: 3px; }
+.botao-nao:active { transform: scale(.96); }
+
+.resultado {
+  margin: 25px auto 12px;
+  padding: 7px 8px 24px;
+  animation: surgir .55s ease both;
+}
+
+.coracao-grande { font-size: 66px; animation: pulsar 1.3s ease-in-out infinite; }
+.resultado h2 { margin: 8px 0 16px; font-size: 27px; }
+.resultado p { max-width: 350px; margin: 12px auto; line-height: 1.6; font-size: 17px; }
+.resultado .assinatura { margin-top: 24px; font-size: 22px; font-weight: 800; color: #d74181; }
+.rodape { margin: 8px 0 0; color: #bd8a9d; font-size: 12px; }
+
+[hidden] { display: none !important; }
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(12px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes pulsar {
+  50% { transform: scale(1.16); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
